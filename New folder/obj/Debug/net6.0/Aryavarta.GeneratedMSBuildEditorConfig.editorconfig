@@ -1,0 +1,149 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Aryavarta
+build_property.RootNamespace = Aryavarta
+build_property.ProjectDir = C:\Aryavarta\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Aryavarta
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 6.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Aryavarta/Areas/Admin_Side/Views/Admin/Admin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5fU2lkZVxWaWV3c1xBZG1pblxBZG1pbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Aryavarta/Areas/Admin_Side/Views/Cart/AVP_CartAddEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5fU2lkZVxWaWV3c1xDYXJ0XEFWUF9DYXJ0QWRkRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Aryavarta/Areas/Admin_Side/Views/Cart/AVP_CartList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5fU2lkZVxWaWV3c1xDYXJ0XEFWUF9DYXJ0TGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Aryavarta/Areas/Admin_Side/Views/Feedback/AVP_FeedbackAddEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5fU2lkZVxWaWV3c1xGZWVkYmFja1xBVlBfRmVlZGJhY2tBZGRFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Aryavarta/Areas/Admin_Side/Views/Feedback/AVP_FeedbackList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5fU2lkZVxWaWV3c1xGZWVkYmFja1xBVlBfRmVlZGJhY2tMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Aryavarta/Areas/Admin_Side/Views/Finish/AVP_FinishAddEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5fU2lkZVxWaWV3c1xGaW5pc2hcQVZQX0ZpbmlzaEFkZEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Aryavarta/Areas/Admin_Side/Views/Finish/AVP_FinishList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5fU2lkZVxWaWV3c1xGaW5pc2hcQVZQX0ZpbmlzaExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Aryavarta/Areas/Admin_Side/Views/Material/AVP_MaterialAddEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5fU2lkZVxWaWV3c1xNYXRlcmlhbFxBVlBfTWF0ZXJpYWxBZGRFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Aryavarta/Areas/Admin_Side/Views/Material/AVP_MaterialList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5fU2lkZVxWaWV3c1xNYXRlcmlhbFxBVlBfTWF0ZXJpYWxMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Aryavarta/Areas/Admin_Side/Views/OrderItems/AVP_OrderItemsAddEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5fU2lkZVxWaWV3c1xPcmRlckl0ZW1zXEFWUF9PcmRlckl0ZW1zQWRkRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Aryavarta/Areas/Admin_Side/Views/OrderItems/AVP_OrderItemsList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5fU2lkZVxWaWV3c1xPcmRlckl0ZW1zXEFWUF9PcmRlckl0ZW1zTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Aryavarta/Areas/Admin_Side/Views/Order/AVP_OrderAddEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5fU2lkZVxWaWV3c1xPcmRlclxBVlBfT3JkZXJBZGRFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Aryavarta/Areas/Admin_Side/Views/Order/AVP_OrderList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5fU2lkZVxWaWV3c1xPcmRlclxBVlBfT3JkZXJMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Aryavarta/Areas/Admin_Side/Views/Products/AVP_ProductsAddEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5fU2lkZVxWaWV3c1xQcm9kdWN0c1xBVlBfUHJvZHVjdHNBZGRFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Aryavarta/Areas/Admin_Side/Views/Products/AVP_ProductsList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5fU2lkZVxWaWV3c1xQcm9kdWN0c1xBVlBfUHJvZHVjdHNMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Aryavarta/Areas/Admin_Side/Views/ProductType/AVP_ProductTypeAddEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5fU2lkZVxWaWV3c1xQcm9kdWN0VHlwZVxBVlBfUHJvZHVjdFR5cGVBZGRFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Aryavarta/Areas/Admin_Side/Views/ProductType/AVP_ProductTypeList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5fU2lkZVxWaWV3c1xQcm9kdWN0VHlwZVxBVlBfUHJvZHVjdFR5cGVMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Aryavarta/Areas/Admin_Side/Views/User/AVP_UserList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5fU2lkZVxWaWV3c1xVc2VyXEFWUF9Vc2VyTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Aryavarta/Areas/Admin_Side/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5fU2lkZVxWaWV3c1xfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Aryavarta/Areas/User_Side/Views/About/About.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlcl9TaWRlXFZpZXdzXEFib3V0XEFib3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Aryavarta/Areas/User_Side/Views/Products/MortiseHandles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlcl9TaWRlXFZpZXdzXFByb2R1Y3RzXE1vcnRpc2VIYW5kbGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Aryavarta/Areas/User_Side/Views/Products/Products.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlcl9TaWRlXFZpZXdzXFByb2R1Y3RzXFByb2R1Y3RzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Aryavarta/Areas/User_Side/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlcl9TaWRlXFZpZXdzXF9WaWV3SW1wb3J0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Aryavarta/Views/Home/Admin_Panal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZG1pbl9QYW5hbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Aryavarta/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Aryavarta/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Aryavarta/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Aryavarta/Views/Shared/_LayoutAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRBZG1pbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Aryavarta/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Aryavarta/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Aryavarta/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Aryavarta/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-u2rkzkznfp

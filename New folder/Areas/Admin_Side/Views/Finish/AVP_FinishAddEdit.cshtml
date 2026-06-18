@@ -1,0 +1,68 @@
+﻿@{
+    ViewData["Title"] = "Finish AddEdit";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+@model Aryavarta.Areas.Admin_Side.Models.FinishModel
+
+
+<div class="content-body" style="min-height: 924px;">
+    <div class="container-fluid">
+        <div class="col-12">
+            <div class="page-content-wrapper">
+
+        <div class="page-content" style="min-height: 396px;">
+
+            <div class="container portlet light bordered">
+
+                <div class="portlet-title">
+                    <div class="caption">
+                        <span class="caption-subject font-dark sbold uppercase">Finish Add-Edit Form</span>
+                    </div>
+                </div>
+                <div class="form">
+
+                    <h3 style="color: green;"> @TempData["FinishInsertMsg"] </h3>
+
+                    <form method="post" asp-area="Admin_Side" asp-controller="Finish" asp-action="Save" class="container" role="form" enctype="multipart/form-data">
+                        <div class="form-body">
+
+                            @Html.HiddenFor(x=>x.FinishID)
+
+                            <div class="form-body">
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label"> Finish Type </label>
+                                    <div class="col-md-9">
+                                        <input type="text" asp-for="FinishType" class="form-control" placeholder="Enter Finish Type">
+                                        <span asp-validation-for="FinishType" class="text-danger">  </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="form-actions">
+                            <div class="row">
+                                <div class="col-md-offset-3 col-md-9">
+                                    <button type="submit" class="btn green" style="background-color:#425159; color:#f68b1f;">Submit</button>
+                                    <button type="button" class="btn default" style="background-color:#425159; color:#f68b1f;" onclick="location.href='@Url.Action("Index")';">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

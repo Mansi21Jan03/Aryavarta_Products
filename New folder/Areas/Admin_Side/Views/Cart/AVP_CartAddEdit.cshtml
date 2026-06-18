@@ -1,0 +1,159 @@
+﻿
+@{
+    ViewData["Title"] = "AVP_CartAddEdit";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@model Aryavarta.Areas.Admin_Side.Models.CartModel
+
+
+<div class="content-body" style="min-height: 924px;">
+    <div class="container-fluid">
+        <div class="col-12">
+            <div class="page-content-wrapper">
+
+                <div class="page-content" style="min-height: 396px;">
+
+                    <div class="container portlet light bordered">
+
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <span class="caption-subject font-dark sbold uppercase">Cart Add-Edit Form</span>
+                            </div>
+                        </div>
+                        <div class="form">
+
+                            <h3 style="color: green;"> @TempData["CartInsertMsg"] </h3>
+
+                            <form method="post" asp-area="Admin_Side" asp-controller="Cart" asp-action="Save" class="container" role="form" enctype="multipart/form-data">
+                                <div class="form-body">
+
+                                    @Html.HiddenFor(x=>x.CartID)
+
+                                    <div class="form-body">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label"> Product Image </label>
+                                            <div class="col-md-9">
+                                                <select class="form-control" asp-for="ProductID" asp-items="@(new SelectList(ViewBag.ImageList,"ProductID","ProductImg"))">
+                                                    <option value=""> Select Product Image </option>
+                                                </select>
+                                                <span asp-validation-for="ProductID" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-body">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label"> Series No </label>
+                                            <div class="col-md-9">
+                                                <select class="form-control" asp-for="ProductID" asp-items="@(new SelectList(ViewBag.SeriesList,"ProductID","SeriesNo"))">
+                                                    <option value=""> Select Series No </option>
+                                                </select>
+                                                <span asp-validation-for="ProductID" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    @*<div class="form-body">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label"> Product Price </label>
+                                            <div class="col-md-9">
+                                                <select class="form-control" asp-for="ProductID" asp-items="@(new SelectList(ViewBag.PriceList,"ProductID","ProductPrice"))">
+                                                    <option value=""> Select Product Price </option>
+                                                </select>
+                                                <span asp-validation-for="ProductID" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>*@
+
+                                    <div class="form-body">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">User Name</label>
+                                            <div class="col-md-9">
+                                                <select class="form-control" asp-for="UserID" asp-items="@(new SelectList(ViewBag.UserList,"UserID","UserName"))">
+                                                    <option value=""> Select User </option>
+                                                </select>
+                                                <span asp-validation-for="UserID" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-body">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label"> Quantity </label>
+                                            <div class="col-md-9">
+                                                <input type="text" asp-for="Quantity" class="form-control" placeholder="Enter Quantity">
+                                                <span asp-validation-for="Quantity" class="text-danger">  </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-body">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label"> Total Price </label>
+                                            <div class="col-md-9">
+                                                <input type="text" asp-for="TotalPrice" class="form-control" placeholder="Enter TotalPrice">
+                                                <span asp-validation-for="TotalPrice" class="text-danger">  </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="form-actions">
+                                    <div class="row">
+                                        <div class="col-md-offset-3 col-md-9">
+                                            <button type="submit" class="btn green" style="background-color:#425159; color:#f68b1f;">Submit</button>
+                                            <button type="button" class="btn default" style="background-color:#425159; color:#f68b1f;" onclick="location.href='@Url.Action("Index")';">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+
+    <script>
+        function fnOnStateChange() {
+            var SeriesNo = $("#SeriesNo").val();
+
+            if (SeriesNo !== "") {
+                $("#ProductID").empty();
+                $("#ProductID").append($("<option></option>").val("").html("Select Product Price"));
+                $.ajax(
+                    {
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                        url: "@Url.Action("DropDownByProduct","Cart")" + "?&SeriesNo=" + SeriesNo,
+                        data: {},
+                        dataType: "json",
+                        success: function (Result) {
+                            $.each(Result,
+                                function (key, value) {
+                                    $("#ProductID").append($("<option></option>").val(value.productID).html(value.productPrice));
+                                });
+                        },
+                        error: function (r) {
+                            alert("Error while loading dropdown.");
+                        }
+                    });
+            }
+            else {
+                $("#ProductID").empty();
+                $("#ProductID").append($("<option></option>").val("").html("Select Product Price"));
+            }
+        }
+    </script>
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,152 @@
+﻿
+@{
+    ViewData["Title"] = "AVP_OrderAddEdit";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@model Aryavarta.Areas.Admin_Side.Models.OrderModel
+
+
+<div class="content-body" style="min-height: 924px;">
+    <div class="container-fluid">
+        <div class="col-12">
+            <div class="page-content-wrapper">
+
+        <div class="page-content" style="min-height: 396px;">
+
+            <div class="container portlet light bordered">
+
+                <div class="portlet-title">
+                    <div class="caption">
+                        <span class="caption-subject font-dark sbold uppercase">Order Add-Edit Form</span>
+                    </div>
+                </div>
+                <div class="form">
+
+                    <h3 style="color: green;"> @TempData["OrderInsertMsg"] </h3>
+
+                    <form method="post" asp-area="Admin_Side" asp-controller="Order" asp-action="Save" class="container" role="form" enctype="multipart/form-data">
+                        <div class="form-body">
+
+                            @Html.HiddenFor(x=>x.OrderID)
+
+                            <div class="form-body">
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">User Name</label>
+                                    <div class="col-md-9">
+                                        <select class="form-control" asp-for="UserID" asp-items="@(new SelectList(ViewBag.UserList,"UserID","UserName"))">
+                                            <option value=""> Select User </option>
+                                        </select>
+                                        <span asp-validation-for="UserID" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-body col-6">
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label"> Series No </label>
+                                        <div class="col-md-9">
+                                                    <select class="form-control" asp-for="ProductID" id="productID" asp-items="@(new SelectList(ViewBag.ProductList,"ProductID","SeriesNo"))">
+                                                <option value=""> Select Series No </option>
+                                            </select>
+                                            <span asp-validation-for="ProductID" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                        <div class="form-body col-6">
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label"> Product Price </label>
+                                        <div class="col-md-9">
+                                            <input type="text" asp-for="ProductPrice" id="productPrice" class="form-control" placeholder="Enter Product Price" readonly>
+                                            <span asp-validation-for="ProductPrice" class="text-danger">  </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-body col-6">
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label"> Quantity </label>
+                                        <div class="col-md-9">
+                                            <input type="text" asp-for="Quantity" id="quantity" class="form-control" placeholder="Enter Quantity">
+                                            <span asp-validation-for="Quantity" class="text-danger">  </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                        <div class="form-body col-6">
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label"> Total Amount </label>
+                                        <div class="col-md-9">
+                                            <input type="text" asp-for="TotalAmount" id="totalAmount" class="form-control" placeholder="Enter Total Amount" readonly>
+                                            <span asp-validation-for="TotalAmount" class="text-danger">  </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="form-actions">
+                            <div class="row">
+                                <div class="col-md-offset-3 col-md-9">
+                                    <button type="submit" class="btn green" style="background-color:#425159; color:#f68b1f;">Submit</button>
+                                    <button type="button" class="btn default" style="background-color:#425159; color:#f68b1f;" onclick="location.href='@Url.Action("Index")';">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/vendor/global/global.min.js"></script>
+    <script src="~/js/quixnav-init.js"></script>
+    <script src="~/js/custom.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#productID').on('change', function () {
+                var selectedProductID = $(this).val();
+                $.ajax({
+                    url: '/Admin_Side/Order/GetProductPrice',
+                    type: 'GET',
+                    data: { productID: selectedProductID },
+                    success: function (productPrice) {
+                        $('#productPrice').val(productPrice);
+
+                    },
+                    error: function () {
+                        console.log('Error fetching product price');
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $('#quantity, #productPrice').on('input', function () {
+                var quantity = parseFloat($('#quantity').val()) || 0;
+                var price = parseFloat($('#productPrice').val()) || 0;
+                var totalAmount = quantity * price;
+                $('#totalAmount').val(totalAmount);
+            });
+        });
+    </script>
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

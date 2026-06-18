@@ -1,0 +1,102 @@
+﻿
+@{
+    ViewData["Title"] = "AVP_FeedbackAddEdit";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@model Aryavarta.Areas.Admin_Side.Models.FeedbackModel
+
+
+<div class="content-body" style="min-height: 924px;">
+    <div class="container-fluid">
+        <div class="col-12">
+            <div class="page-content-wrapper">
+
+                <div class="page-content" style="min-height: 396px;">
+
+                    <div class="container portlet light bordered">
+
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <span class="caption-subject font-dark sbold uppercase">Feedback Add-Edit Form</span>
+                            </div>
+                        </div>
+                        <div class="form">
+
+                            <h3 style="color: green;"> @TempData["FeedbackInsertMsg"] </h3>
+
+                            <form method="post" asp-area="Admin_Side" asp-controller="Feedback" asp-action="Save" class="container" role="form" enctype="multipart/form-data">
+                                <div class="form-body">
+
+                                    @Html.HiddenFor(x=>x.FeedbackID)
+
+                                    <div class="form-body">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">User Name</label>
+                                            <div class="col-md-9">
+                                                <select class="form-control" asp-for="UserID" asp-items="@(new SelectList(ViewBag.UserList,"UserID","UserName"))">
+                                                    <option value=""> Select User </option>
+                                                </select>
+                                                <span asp-validation-for="UserID" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-body">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label"> Series No </label>
+                                            <div class="col-md-9">
+                                                <select class="form-control" asp-for="ProductID" asp-items="@(new SelectList(ViewBag.SeriesList,"ProductID","SeriesNo"))">
+                                                    <option value=""> Select Series No </option>
+                                                </select>
+                                                <span asp-validation-for="ProductID" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-body">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label"> Image </label>
+                                            <div class="col-md-9">
+                                                <input type="file" class="form-control" placeholder="Upload File" asp-for="File" />
+                                                <span asp-validation-for="Image" class="text-danger">  </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-body">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label"> Feedback Message </label>
+                                            <div class="col-md-9">
+                                                <input type="text" asp-for="FeedbackMsg" class="form-control" placeholder="Enter Feedback Message">
+                                                <span asp-validation-for="FeedbackMsg" class="text-danger">  </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="form-actions">
+                                    <div class="row">
+                                        <div class="col-md-offset-3 col-md-9">
+                                            <button type="submit" class="btn green" style="background-color:#425159; color:#f68b1f;">Submit</button>
+                                            <button type="button" class="btn default" style="background-color:#425159; color:#f68b1f;" onclick="location.href='@Url.Action("Index")';">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

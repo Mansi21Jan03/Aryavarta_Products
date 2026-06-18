@@ -1,0 +1,137 @@
+﻿
+@{
+    ViewData["Title"] = "Product AddEdit";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+@model Aryavarta.Areas.Admin_Side.Models.ProductsModel
+
+
+<div class="content-body" style="min-height: 924px;">
+    <div class="container-fluid">
+        <div class="col-12">
+            <div class="page-content-wrapper">
+
+                <div class="page-content" style="min-height: 396px;">
+
+                    <div class="container portlet light bordered">
+
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <span class="caption-subject font-dark sbold uppercase">Product Add-Edit Form</span>
+                            </div>
+                        </div>
+                        <div class="form">
+
+                            <h3 style="color: green;"> @TempData["ProductInsertMsg"] </h3>
+
+                            <form method="post" asp-area="Admin_Side" asp-controller="Products" asp-action="Save" class="container" role="form" enctype="multipart/form-data">
+                                <div class="form-body">
+
+                                    @Html.HiddenFor(x=>x.ProductID)
+                                    @Html.HiddenFor(x=>x.ProductImg)
+
+                                    <div class="form-body">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Material Type</label>
+                                            <div class="col-md-9">
+                                                <select class="form-control" asp-for="MaterialID" asp-items="@(new SelectList(ViewBag.MaterialList,"MaterialID","MaterialType"))">
+                                                    <option value=""> Select Material </option>
+                                                </select>
+                                                <span asp-validation-for="MaterialID" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div> <br />
+
+                                    <div class="form-body">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Finish Type</label>
+                                            <div class="col-md-9">
+                                                <select class="form-control" asp-for="FinishID" asp-items="@(new SelectList(ViewBag.FinishList,"FinishID","FinishType"))">
+                                                    <option value=""> Select Finish </option>
+                                                </select>
+                                                <span asp-validation-for="FinishID" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div> <br />
+
+                                    <div class="form-body">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Product Type</label>
+                                            <div class="col-md-9">
+                                                <select class="form-control" asp-for="ProductTypeID" asp-items="@(new SelectList(ViewBag.ProductTypeList,"ProductTypeID","ProductType"))">
+                                                    <option value=""> Select ProductType </option>
+                                                </select>
+                                                <span asp-validation-for="ProductTypeID" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div> <br />
+
+                                    <div class="form-body">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label"> SeriesNo </label>
+                                            <div class="col-md-9">
+                                                <input type="text" asp-for="SeriesNo" class="form-control" placeholder="Enter SeriesNo">
+                                                <span asp-validation-for="SeriesNo" class="text-danger">  </span>
+                                            </div>
+                                        </div>
+                                    </div> <br />
+
+                                    <div class="form-body">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label"> Product Price </label>
+                                            <div class="col-md-9">
+                                                <input type="text" asp-for="ProductPrice" class="form-control" placeholder="Enter ProductPrice">
+                                                <span asp-validation-for="ProductPrice" class="text-danger">  </span>
+                                            </div>
+                                        </div>
+                                    </div> <br />
+
+                                    <div class="form-body">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label"> ProductImg </label>
+                                            <div class="col-md-9">
+                                                <input type="file" class="form-control" placeholder="Upload File" asp-for="File"  />
+                                                <span asp-validation-for="ProductImg" class="text-danger">  </span>
+                                            </div>
+                                        </div>
+                                    </div> <br />
+
+                                    <div class="form-body">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label"> AvailableStock </label>
+                                            <div class="col-md-9">
+                                                <input type="text" asp-for="AvailableStock" class="form-control" placeholder="Enter AvailableStock">
+                                                <span asp-validation-for="AvailableStock" class="text-danger">  </span>
+                                            </div>
+                                        </div>
+                                    </div> 
+
+                                </div>
+                                <div class="form-actions">
+                                    <div class="row">
+                                        <div class="col-md-offset-3 col-md-9">
+                                            <button type="submit" class="btn btn-outline-green" style="background-color:#425159; color:#f68b1f;">Submit</button>
+                                            <button type="button" class="btn default" style="background-color:#425159; color:#f68b1f;" onclick="location.href='@Url.Action("Index")';">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

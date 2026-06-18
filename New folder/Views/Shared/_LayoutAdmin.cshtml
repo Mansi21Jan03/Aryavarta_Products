@@ -1,0 +1,281 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Demo_AdminPanel</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Demo_AdminPanel.styles.css" asp-append-version="true" />
+
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="~/images/favicon.png">
+    <link rel="stylesheet" href="~/vendor/owl-carousel/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/vendor/owl-carousel/css/owl.theme.default.min.css">
+    <link href="~/vendor/jqvmap/css/jqvmap.min.css" rel="stylesheet">
+    <link href="~/css/style2.css" rel="stylesheet">
+    <link href="~/scss/layout/sidebar/_sidebar-global.scss" rel="stylesheet" />
+
+    <link href="~/scss/layout/sidebar/_sidebar-full.scss" rel="stylesheet" />
+</head>
+<body>
+
+    <div id="main-wrapper" class="show">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <a class="brand-logo" asp-area="Admin_Side" asp-controller="Admin" asp-action="Admin" style="background-color: #425159;">
+                @*<img src="~/img/Aryavarta_A.png" style="height: 50px; widht:40px;" alt="">*@
+                <img class="logo-compact" src="~/images/logo-text.png" alt="">
+                <span class="brand-title" style="color: #f68b1f;"> ARYAVARTA </span>
+                @*<img class="brand-title" src="~/img/AryavartaNew.png" style="height: 80px; width:150px;" alt="">*@
+            </a>
+
+            <div class="nav-control">
+                <div class="hamburger">
+                    <span class="line" style="background-color: #425159;"></span>
+                    <span class="line" style="background-color: #425159;"></span>
+                    <span class="line" style="background-color: #425159;"></span>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        @*<div class="header-left">
+                            <div class="search_bar dropdown">
+                                <span class="search_icon p-3 c-pointer" data-toggle="dropdown">
+                                    <i class="mdi mdi-magnify"></i>
+                                </span>
+                                <div class="dropdown-menu p-0 m-0">
+                                    <form>
+                                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>*@
+
+                        <ul class="navbar-nav header-right col-sm-9">
+
+                            <li class="nav-item dropdown notification_dropdown">
+                                <a class="nav-link" href="#" role="button" data-toggle="dropdown">
+                                    <i class="mdi mdi-bell"></i>
+                                    <div class="pulse-css" style="background-color: #425159; back"></div>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <ul class="list-unstyled">
+                                        <li class="media dropdown-item">
+                                            <span class="success"><i class="ti-user"></i></span>
+                                            <div class="media-body">
+                                                <a href="#">
+                                                    <p>
+                                                        <strong>Martin</strong> has added a <strong>customer</strong> Successfully
+                                                    </p>
+                                                </a>
+                                            </div>
+                                            <span class="notify-time">3:20 am</span>
+                                        </li>
+                                        <li class="media dropdown-item">
+                                            <span class="primary"><i class="ti-shopping-cart"></i></span>
+                                            <div class="media-body">
+                                                <a href="#">
+                                                    <p><strong>Jennifer</strong> purchased Light Dashboard 2.0.</p>
+                                                </a>
+                                            </div>
+                                            <span class="notify-time">3:20 am</span>
+                                        </li>
+                                        <li class="media dropdown-item">
+                                            <span class="danger"><i class="ti-bookmark"></i></span>
+                                            <div class="media-body">
+                                                <a href="#">
+                                                    <p>
+                                                        <strong>Robin</strong> marked a <strong>ticket</strong> as unsolved.
+                                                    </p>
+                                                </a>
+                                            </div>
+                                            <span class="notify-time">3:20 am</span>
+                                        </li>
+                                        <li class="media dropdown-item">
+                                            <span class="primary"><i class="ti-heart"></i></span>
+                                            <div class="media-body">
+                                                <a href="#">
+                                                    <p><strong>David</strong> purchased Light Dashboard 1.0.</p>
+                                                </a>
+                                            </div>
+                                            <span class="notify-time">3:20 am</span>
+                                        </li>
+                                        <li class="media dropdown-item">
+                                            <span class="success"><i class="ti-image"></i></span>
+                                            <div class="media-body">
+                                                <a href="#">
+                                                    <p>
+                                                        <strong> James.</strong> has added a<strong>customer</strong> Successfully
+                                                    </p>
+                                                </a>
+                                            </div>
+                                            <span class="notify-time">3:20 am</span>
+                                        </li>
+                                    </ul>
+                                    <a class="all-notification" href="#">See all notifications <i class="ti-arrow-right"></i></a>
+                                </div>
+                            </li>
+
+                            <li class="nav-item dropdown header-profile">
+                                <a class="nav-link" href="#" role="button" data-toggle="dropdown">
+                                    <i class="mdi mdi-account"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a href="./app-profile.html" class="dropdown-item">
+                                        <i class="icon-user"></i>
+                                        <span class="ml-2">Profile </span>
+                                    </a>
+                                    <a href="./email-inbox.html" class="dropdown-item">
+                                        <i class="icon-envelope-open"></i>
+                                        <span class="ml-2">Inbox </span>
+                                    </a>
+                                    <a href="./page-login.html" class="dropdown-item">
+                                        <i class="icon-key"></i>
+                                        <span class="ml-2">Logout </span>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div class="quixnav" style="background-color: #425159;">
+            <div class="quixnav-scroll ps ps--active-y mm-active">
+                <ul class="metismenu mm-show" id="menu">
+                    
+                    <li class="nav-label" style="color: #f68b1f">Table</li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" style="background-color: #425159; color: #f68b1f;" aria-expanded="false"><i class="icon icon-layout-25"></i><span class="nav-text">Table</span></a>
+                        <ul aria-expanded="false" class="mm-collapse" style="background-color: #425159;">
+
+                            <li class="nav-item  ">
+                                <a class="nav-link " asp-area="Admin_Side" asp-controller="Cart" asp-action="Index">
+                                    <span class="title" style="color: #f68b1f;"> Cart </span>
+                                </a>
+                            </li>
+
+                            <li class="nav-item  ">
+                                <a class="nav-link" asp-area="Admin_Side" asp-controller="User" asp-action="Index">
+                                    <span class="title" style="color: #f68b1f;"> User </span>
+                                </a>
+                            </li>
+
+                            <li class="nav-item  ">
+                                <a class="nav-link" asp-area="Admin_Side" asp-controller="Order" asp-action="Index">
+                                    <span class="title" style="color: #f68b1f;"> Order </span>
+                                </a>
+                            </li>
+
+                            <li class="nav-item  ">
+                                <a class="nav-link " asp-area="Admin_Side" asp-controller="OrderItems" asp-action="Index">
+                                    <span class="title" style="color: #f68b1f;"> Order Items </span>
+                                </a>
+                            </li>
+
+                            <li class="nav-item  ">
+                                <a class="nav-link" asp-area="Admin_Side" asp-controller="Material" asp-action="Index">
+                                    <span class="title" style="color: #f68b1f;"> Material </span>
+                                </a>
+                            </li>
+
+                            <li class="nav-item  ">
+                                <a class="nav-link " asp-area="Admin_Side" asp-controller="Finish" asp-action="Index">
+                                    <span class="title" style="color: #f68b1f;"> Finish </span>
+                                </a>
+                            </li>
+
+                            <li class="nav-item  ">
+                                <a class="nav-link " asp-area="Admin_Side" asp-controller="ProductType" asp-action="Index">
+                                    <span class="title" style="color: #f68b1f;"> ProductType </span>
+                                </a>
+                            </li>
+
+                            <li class="nav-item  ">
+                                <a class="nav-link " asp-area="Admin_Side" asp-controller="Products" asp-action="Index">
+                                    <span class="title" style="color: #f68b1f;"> Product </span>
+                                </a>
+                            </li>
+
+                            <li class="nav-item  ">
+                                <a class="nav-link " asp-area="Admin_Side" asp-controller="Feedback" asp-action="Index">
+                                    <span class="title" style="color: #f68b1f;"> Feedback </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; height: 648px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 566px;"></div></div>
+            </div>
+
+        </div>
+
+        <div class="container-fuild">
+            @RenderBody()
+        </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+    </div>
+
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    <script src="~/vendor/global/global.min.js"></script>
+    <script src="~/js/quixnav-init.js"></script>
+    <script src="~/js/custom.min.js"></script>
+
+
+    <!-- Vectormap -->
+    <script src="~/vendor/raphael/raphael.min.js"></script>
+    <script src="~/vendor/morris/morris.min.js"></script>
+
+
+    <script src="~/vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="~/vendor/chart.js/Chart.bundle.min.js"></script>
+
+    <script src="~/vendor/gaugeJS/dist/gauge.min.js"></script>
+
+    <!--  flot-chart js -->
+    <script src="~/vendor/flot/jquery.flot.js"></script>
+    <script src="~/vendor/flot/jquery.flot.resize.js"></script>
+
+    <!-- Owl Carousel -->
+    <script src="~/vendor/owl-carousel/js/owl.carousel.min.js"></script>
+
+    <!-- Counter Up -->
+    <script src="~/vendor/jqvmap/js/jquery.vmap.min.js"></script>
+    <script src="~/vendor/jqvmap/js/jquery.vmap.usa.js"></script>
+    <script src="~/vendor/jquery.counterup/jquery.counterup.min.js"></script>
+
+
+    <script src="~/js/dashboard/dashboard-1.js"></script>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,132 @@
+﻿
+@{
+    ViewData["Title"] = "AVP_OrderList";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@using System.Data
+@model DataTable
+
+<div class="content-body" style="min-height: 924px;">
+    <div class="container-fluid">
+        <div class="col-12">
+            <div class="card">
+                <div class="row">
+                    <div class="card-header col-md-9 col-sm-9" style="margin-left: 10px;">
+                        <h4 class="card-title"> Order List </h4>
+                    </div>
+                    
+                    <div class ="btn-group col-md-2 col-sm-2" style="margin-right: 10px; padding-top:15px;">
+                        <a asp-area="Admin_Side" asp-controller="Order" asp-action="Add" class="btn btn-sm" style="background-color:#425159; color:#f68b1f;"> Add Order <i class="fa fa-plus"> </i> </a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table id="example" class="display" style="min-width: 845px">
+                            <thead>
+                                <tr>
+                                    <th> User Name </th>
+                                    <th> SeriesNo </th>
+                                    <th> Product Price</th>
+                                    <th> Quantity </th>
+                                    <th> Total Amount </th>
+                                    <th> CreationDate </th>
+                                    <th> ModificationDate </th>
+                                    <th> Action </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (DataRow dr in Model.Rows)
+                                {
+                                    <tr>
+
+                                        <td> @dr["UserName"] </td>
+                                        <td> @dr["SeriesNo"] </td>
+                                        <td> @dr["ProductPrice"] </td>
+                                        <td> @dr["Quantity"] </td>
+                                        <td> @Convert.ToDecimal(dr["TotalAmount"]).ToString()</td>
+                                        <td> @Convert.ToDateTime(dr["CreationDate"]).ToString("dd-MM-yyyy") </td>
+                                        <td> @Convert.ToDateTime(dr["ModificationDate"]).ToString("dd-MM-yyyy") </td>
+                                        <td>
+                                            <form method="post" asp-controller="Order" asp-action="Delete">
+                                                <input type="hidden" name="OrderID" value="@Convert.ToInt32(dr["OrderID"])" />
+                                                <button type="submit" class="btn btn-danger" onclick="return fun1();"> <i class="fa fa-close"></i> </button>
+                                                @*<a asp-controller="Order" asp-action="Add" asp-route-OrderID="@Convert.ToInt32(dr["OrderID"])" class="btn btn-success">  <i class="fa fa-edit"></i> </a>*@
+                                            </form>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
+    <link rel="stylesheet" href="~/vendor/owl-carousel/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/vendor/owl-carousel/css/owl.theme.default.min.css">
+    <link href="~/vendor/jqvmap/css/jqvmap.min.css" rel="stylesheet">
+    <link href="~/css/style2.css" rel="stylesheet">
+    <link href="~/vendor/bootstrap/scss/_reboot.scss" rel="stylesheet">
+    <link href="~/scss/components/tables/_table-datatable.scss" rel="stylesheet">
+
+    <!-- Database -->
+    <link href="~/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    <script src="~/vendor/global/global.min.js"></script>
+    <script src="~/js/quixnav-init.js"></script>
+    <script src="~/js/custom.min.js"></script>
+
+
+
+    <!-- Datatable -->
+    <script src="~/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="~/js/plugins-init/datatables.init.js"></script>
+
+
+    <!-- Vectormap -->
+    <script src="~/vendor/raphael/raphael.min.js"></script>
+    <script src="~/vendor/morris/morris.min.js"></script>
+
+
+    <script src="~/vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="~/vendor/chart.js/Chart.bundle.min.js"></script>
+
+    <script src="~/vendor/gaugeJS/dist/gauge.min.js"></script>
+
+    <!--  flot-chart js -->
+    <script src="~/vendor/flot/jquery.flot.js"></script>
+    <script src="~/vendor/flot/jquery.flot.resize.js"></script>
+
+    <!-- Owl Carousel -->
+    <script src="~/vendor/owl-carousel/js/owl.carousel.min.js"></script>
+
+    <!-- Counter Up -->
+    <script src="~/vendor/jqvmap/js/jquery.vmap.min.js"></script>
+    <script src="~/vendor/jqvmap/js/jquery.vmap.usa.js"></script>
+    <script src="~/vendor/jquery.counterup/jquery.counterup.min.js"></script>
+
+
+    <script src="~/js/dashboard/dashboard-1.js"></script>
+
+    <script>
+
+        function fun1() {
+            if (confirm("Are you sure you want delete the record ?")) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    </script>
+}
